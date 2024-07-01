@@ -1,4 +1,4 @@
-let employeesArray = [];
+const employeesArray = [];
 
 let input = true;
 // Get a reference to the #add-employees-btn element
@@ -14,14 +14,12 @@ const collectEmployees = function () {
       lastName: window.prompt("What is their last name"),
       salary: window.prompt("What is their salary"),
     };
-    console.log(employeeObject.salary)
     if(isNaN(employeeObject.salary)==true){
       employeeObject.salary = 0;
       console.log("Salary was not a number")
     }
     console.log(employeeObject)
     employeesArray.push(employeeObject)
-    console.log(employeesArray)
     input = window.confirm("Would you like to continue");
     if (input == false) {
       console.log("clicked cancel");
@@ -29,11 +27,20 @@ const collectEmployees = function () {
     }
 
   }
+  console.log(employeesArray)
+  return(employeesArray);
+
 }
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
+  let average = 0;
+  for(i=0; i < employeesArray.length; i++){
+    average += Number(employeesArray[i].salary);
+  }
+  let totalAvg = average/i;
+  console.log(`The average employee salary between our ${i} employee(s) is ${totalAvg}`);
 }
 
 // Select a random employee
