@@ -14,6 +14,11 @@ const collectEmployees = function () {
       lastName: window.prompt("What is their last name"),
       salary: window.prompt("What is their salary"),
     };
+    console.log(employeeObject.salary)
+    if(isNaN(employeeObject.salary)==true){
+      employeeObject.salary = 0;
+      console.log("Salary was not a number")
+    }
     console.log(employeeObject)
     employeesArray.push(employeeObject)
     console.log(employeesArray)
