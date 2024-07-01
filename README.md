@@ -3,9 +3,7 @@
 ## Introduction
 This project serves as an introduction to JavaScript.
 
-The script prompts the user for a first name, last name, salary, of an employee and stores it in an array. If a string is inputed when the window prompts for a salary, the code will produce a log saying that input is not a number and set the salary to 0.
-
-The script will also output the average of all salaries obtained from the user, and randomly select an employee and display both in the logs.
+The script prompts the user for employee data. First name, last name, and salary. Using the information provided, it will display all the info in a box, calculate the average salary, and randomly pick one of the employees.
 
 ## Mock Up
 An example of what this will look like after the user has finished inputing data. 
