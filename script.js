@@ -14,7 +14,8 @@ const collectEmployees = function () {
     let employeeObject = {
       firstName: window.prompt("What is their first name"),
       lastName: window.prompt("What is their last name"),
-      salary: window.prompt("What is their salary"),
+      //stores salary as a number instead of an array
+      salary: Number(window.prompt("What is their salary")),
     };
     //Checked whether salary was a number 
     if(isNaN(employeeObject.salary)==true){
@@ -50,15 +51,14 @@ const displayAverageSalary = function (employeesArray) {
   //Declared variables
   let average = 0;
   for(i=0; i < employeesArray.length; i++){
-    //Add all salaries, Number function converts salary to a number because it is a string right now
-    //console.log(typeof employeesArray[i].salary)
-    average += Number(employeesArray[i].salary);
+    //Add all salaries
+    average += employeesArray[i].salary;
     //Checked average
     //console.log(average)
   }
-  //Divied average by number of employees
-  let totalAvg = average/i;
-  console.log(`The average employee salary between our ${i} employee(s) is ${totalAvg}`);
+  //Divied average by number of employees and rounds to the second decimal
+  let totalAvg = (average/i).toFixed(2);
+  console.log(`The average employee salary between our ${i} employee(s) is $${totalAvg}`);
 }
 
 // Select a random employee
